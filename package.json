@@ -1,0 +1,11 @@
+{
+  "name": "simpleAngularJSAppBoilerplate",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AngularJSDublin/simpleAngularJSBuildUpAppBoilerplate"	
+  },
+  "devDependencies": {
+    "express": "~4.12.4"
+  }
+}

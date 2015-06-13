@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>AngularBuildUp Workshops</title>
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="assets/css/vendor/bootstrap-theme.min.css">
+
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body ng-app='eventsApp'>
+  
+        <h1>Hi! This is Your Angular Application Boilerplate.</h1>
+        
+        <div ng-controller="SampleController as ctrl">
+            <p>{{ctrl.welcome}}</p>
+        </div>
+
+        <div ng-controller="SecondController">
+            <p>{{welcomeAgain}}</p>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+        <script src="assets/js/vendor/angular.min.js"></script>
+
+        <script src="app/app.js"></script>
+
+    </body>
+</html>
