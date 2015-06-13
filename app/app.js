@@ -6,14 +6,16 @@
 
     app.config(function($routeProvider) {
 
-        $routeProvider.when('/events', {
+        $routeProvider.when('/', {
             templateUrl: 'app/events/events.html',
             controller: 'EventsCtrl'
+        }).when('/events', {
+            templateUrl: 'app/events/events.html',
+            controller: 'EventsCtrl'
+        }).when('/admin', {
+            templateUrl: 'app/admin/admin.html',
+            controller: 'AdminCtrl'
         });
-
-        // .otherwish({
-        //     redirectTo: '/'
-        // });
     });
 
 	//controller as syntax
