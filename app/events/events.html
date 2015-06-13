@@ -1,1 +1,5 @@
-<h1>{{title}}</h1>
+<div ng-repeat="event in events">
+    <img src="{{event.image_url}}" width="100">
+    <h2>{{event.name}}</h2>
+    <p>{{event.description}}</p>
+</div>
