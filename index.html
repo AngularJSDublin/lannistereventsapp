@@ -1,41 +1,65 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Lannister Events App</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>Lannister Events App</title>
 
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap-theme.min.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body ng-app='eventsApp'>
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap-theme.min.css">
 
-        <a href="/#/">Root page</a>
-        <a href="/#/events">Events page</a>
-        <a href="/#/admin">Admin page</a>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
 
-        <div ng-view></div>
+<body ng-app='eventsApp'>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
 
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/#/">
+                        Home
+                        <!--
+                        <img alt="Brand" style="max-width:150px; margin-top: -7px;" src="??????">
+                        --->
+                    </a>
+                </div>
 
-        <script src="assets/js/vendor/angular.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-route.min.js"></script>
 
-        <script src="app/app.js"></script>
+                <ul class="nav nav-pills navbar-right">
+                    <li><a href="/#/events"><i></i> Events</a>
+                    </li>
+                    <li><a href="/#/admin"><i></i> Admin</a>
+                    </li>
+                </ul>
 
-        <script src="app/events/events.controller.js"></script>
-        <script src="app/events/events.service.js"></script>
-    </body>
+            </div>
+        </nav>
+    </header>
+
+    <div ng-view></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <script src="assets/js/vendor/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-route.min.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/events/events.controller.js"></script>
+    <script src="app/events/events.service.js"></script>
+</body>
+
 </html>
