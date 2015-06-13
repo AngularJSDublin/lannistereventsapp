@@ -1,5 +1,19 @@
-<div ng-repeat="event in events">
-    <img src="{{event.image_url}}" width="100">
-    <h2>{{event.name}}</h2>
-    <p>{{event.description}}</p>
+<h1>Events</h1>
+
+<div ng-repeat="event in events" class="panel panel-default event-item">
+  <div class="panel-body">
+    <div class="media">
+      <div class="media-left">
+        <a ng-href="/#/events/{{event.id}}">
+          <img ng-src="{{event.image_url}}" class="media-object event-thumb">
+        </a>
+      </div>
+      <div class="media-body">
+        <h2 class="event-title"><a ng-href="/#/events/{{event.id}}">{{event.name}}</a></h2>
+        <date>{{event.date}}</date>
+        <p>{{event.description}}</p>
+        <a ng-href="/#/events/{{event.id}}" class="btn btn-primary pull-right">Details</a>
+      </div>
+    </div>
+  </div>
 </div>

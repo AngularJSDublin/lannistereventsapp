@@ -20,22 +20,20 @@
 </head>
 
 <body ng-app='eventsApp'>
+    <div class="container">
+        <header class="header clearfix">
+            <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="/#/">Events</a></li>
+                <li role="presentation"><a href="/#/admin">Admin</a></li>
+            </ul>
+            </nav>
+            <h3><a href="/#/">Lannister Events</a></h3>
+        </header>
 
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <ul class="nav nav-pills navbar-left">
-                    <li><a href="/#/events"><i></i> Events</a>
-                    </li>
-                    <li><a href="/#/admin"><i></i> Admin</a>
-                    </li>
-                </ul>
+        <div ng-view></div>
 
-            </div>
-        </nav>
-    </header>
-
-    <div ng-view></div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
