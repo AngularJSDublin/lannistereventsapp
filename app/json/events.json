@@ -1,0 +1,194 @@
+[
+    {
+      "name": "Wicked Wolf Comedy",
+      "description": "Tuesday fortnights comedy upstairs at Wicked Wolf Blackrock (opposite Dart) new and established acts free entry",
+      "date" : "22.12.2015",
+      "category": "arts and culture",
+      "venue": "Wicked Wolf",
+      "city": "Dublin",
+      "location": {
+          "lat": 53.3168242,
+          "lng": -6.2015825
+      },
+      
+      "allSpots": 12000,
+      "availableSpots": 3423,
+      "image_url": "https://static.pexels.com/photos/2361/nature-animal-wolf-wilderness.jpg"
+    },
+    {
+      "name": "The Muse Creative Writing Classes",
+      "description": "Join an innovative creative writing class that is fun, friendly and informative! This carefully structured 8 week course includes inventive writing games as well an introduction to the most important aspects of Creative Writing!",
+      "date" : "09.07.2015",
+      "category": "workshops",
+      "venue": "SEDA College",
+      "city": "Dublin",
+      "location": {
+          "lat": 52.3168242,
+          "lng": -6.101125
+      },
+      
+      "allSpots": 80,
+      "availableSpots": 36,
+      "image_url": "https://static.pexels.com/photos/157/person-apple-laptop-notebook.jpg"
+    },
+    {
+      "name": "Fashion Photography Workshop",
+      "description": "It’s a full immersion 2-day workshop for those who want to learn how to shoot fashion in a modern way and to build a niche in the fashion industry. Both amateur and pros are welcome: my approach is clear and easy. Fashion is the most creative field in photography but there are rules and guidelines to follow. We are going to unveil all the secrets of the different styles and how to apply them depending on the subject and on the client. The aim of the workshop is to give all the participants the full control of the workflow in a fashion shooting: from the concept until high-end retouching.",
+      "date" : "12.07.2015",
+      "category": "workshops",
+      "venue": "ArtDeco Gallery",
+      "city": "Dublin",
+      "location": {
+          "lat": 51.3168242,
+          "lng": -6.2054825
+      },
+      
+      "allSpots": 40,
+      "availableSpots": 12,
+      "image_url": "https://static.pexels.com/photos/1597/fashion-man-person-wristwatch.jpg"
+    },
+    {
+      "name": "Proms on the Pier",
+      "description": "Proms On The Pier is Dublin's festival of 70's & 80's nostalgia. Air Supply Music, 10cc, Phil Coulter, Bjorn Again, Midge Ure, Johnny Logan, Melanie McCabe & lots more.",
+      "date" : "30.08.2015",
+      "category": "entertainment",
+      "venue": "Dun Laoghaire Pier",
+      "city": "Dun Laoghaire",
+      "location": {
+          "lat": 53.294796,
+          "lng": -6.127554
+      },
+      
+      "allSpots": 300,
+      "availableSpots": 163,
+      "image_url": "https://static.pexels.com/photos/2852/black-and-white-party-music-club.jpg"
+    },
+    {
+      "name": "Irish artists Award & Bolywood Jalwa",
+      "description": "Ireland is a multi-cultural country, where people from all over the world come and build their dreams. As a result, the different types of arts and artists in this country is huge, with many of them remaining undervalued and unseen. We at BJ Productions wanted to honour these artists, to thank them for all that they bring to this country, appreciate their hard work and promote them nationally and internationally. And that was how Irish Artists Award (IAA) was born. Irish Artists Award is a platform, where the people can nominate and vote for their favorite artists from the realms of music, dance, creativity, sports and humor. In this second year of its running, there are 14 categories to choose from, so every artist and arts-related organization within the Republic of Ireland or Northern Ireland will be in with an equal chance to win. The winners will be selected through a mix of online and on-site voting, so, this is an award for the people, by the people. One can nominate an artist anytime between 1st April 2015 and 30th June 2015, with voting commencing thereafter. There is no registration charge or any other charges for the participants involved in the process. The grand finale and award presentation ceremony will be held from 17:00pm to 20:00pm on 19th September 2015 at Board Gais Energy Theatre, Dublin, Ireland alongside Bollywood Jalwa 2015, a spectacular and colorful show full of dance and music in true Bollywood style.",
+      "date" : "19.09.2015",
+      "category": "arts and culture",
+      "venue": "Bord Gais Energy Theatre",
+      "city": "Dublin",
+      "location": {
+          "lat": 53.344027,
+          "lng": -6.240062
+      },
+      
+      "allSpots": 900,
+      "availableSpots": 323,
+      "image_url": "https://static.pexels.com/photos/274/people-show-chairs-gym.jpg"
+    },
+    {
+      "name": "InDesign Workshops",
+      "description": "This free InDesign training workshops will cover basic and pro techniques. We'll look at the new InDesign CC features. The session will start with a presentation from Adobe Authorised InDesign trainer Daniel Walter Scott. We'll then have an InDesign Q&A session followed by a drink and chat at the bar. Join our facebook or meetup group to register. Adobe User Group - Ireland",
+      "date" : "23.07.2015",
+      "category": "workshops",
+      "city": "Dublin",
+      "venue": "Toners Pub",
+      "location": {
+          "lat": 53.534342,
+          "lng": -6.740745
+      },
+      
+      "allSpots": 30,
+      "availableSpots": 18,
+      "image_url": "https://static.pexels.com/photos/2097/desk-office-pen-ruler.jpg"
+    },
+    {
+      "name": "Soja concert",
+      "description": "I want to speak for people who don’t have microphones,” Jacob Hemphill says. “Our goal as a band is to stick up for the human race. We see the world and we try to make it better in the limited time we have here. This is the philosophy behind SOJA’s music, a simple statement that has driven the D.C. area band, who blend reggae, go-go, D.C. hardcore, Latin, rock and hip-hop. Originally formed by a group of friends while still in middle school and has built a massive, dedicated fanbase around the world since. In the years following, SOJA has sold more than 200,000 albums, headlined shows in over 20 countries around the world, generated over three million Facebook fans, and 65 million YouTube views. The band has toured with Dave Matthews Band, Incubus, 311 and appeared at major festivals including Bonnaroo where they attract an almost Grateful Dead-like international fan base along the way, with caravans of diehards following them from city to city.After the release of their 2012 album Strength To Survive, the musicians started writing material for what would become their fifth full-length album, Amid the Noise and Haste.",
+      "date" : "23.07.2015",
+      "category": "music",
+      "venue": "The Academy",
+      "city": "Dublin",
+      "location": {
+          "lat": 53.534342,
+          "lng": -6.740745
+      },
+      
+      "allSpots": 32000,
+      "availableSpots": 24574,
+      "image_url": "https://static.pexels.com/photos/678/lights-festival-party-dancing.jpg"
+    },
+    {
+      "name": "Van Morrison - Dinner & Show",
+      "description": "Van Morrison is a Grammy Award-winning singer, songwriter, author, poet and multi-instrumentalist, who is widely considered one of the most influential artists in the entire history of rock and roll. He has albums that are ranked greatest in the entire rock and roll canon. Born in Belfast, Van Morrison's father was an avid collector of American blues and jazz records. Morrison grew up listening to American music like Leadbelly, Howlin' Wolf, Sonny Boy Williamson, Muddy Waters, Sonny Terry & Brownie McGee, John Lee Hooker, Mahalia Jackson, and Lightnin' Hopkins. He grew up surrounded by every kind of American musical influence.  From the age of 13, he was adept at playing guitar, sax and harmonica and played with a series of local showbands along with Skiffle and Rock 'n' Roll groups, and Brian Rossi at the Plaza Ballroom. His early love of music has certainly paid off.",
+      "date" : "23.08.2015",
+      "category": "music",
+      "venue": "Slieve Donard Hotel",
+      "city": "Newcastle",
+      "location": {
+          "lat": 53.6223205,
+          "lng": -6.8401529
+      },
+      
+      "allSpots": 24000,
+      "availableSpots": 2232,
+      "image_url": "https://static.pexels.com/photos/849/people-festival-party-dancing.jpg"
+    },
+    {
+      "name": "Ulster Rugby Family Fun Day",
+      "description": "Maybe not the greatest game of rugby ever played but exciting non the less. Ulster played against 16 men for most of the game and then it became 16 against 14 with a wholly wrong sending off. Still, that last minute try and final seconds conversion brought the game to an amazing climax. Well done the Ulstermen! However, leaving aside the game, the whole afternoon for me and my family was the most wonderful experience. My daughter has special needs and was playing in a tag rugby game at half time. From the moment we arrived at the stadium, the atmosphere was incredible, the attitude of the staff superb and the feeling of immediately belonging palpable. Before the match started I made enquiries about season tickets for next year. Roll on!!",
+      "date" : "31.07.2015",
+      "category": "sport",
+      "venue": "Kingspan Stadium",
+      "city": "Belfast",
+      "location": {
+          "lat": 54.5765936,
+          "lng": -5.9045915
+      },
+      
+      "allSpots": 65000,
+      "availableSpots": 45344,
+      "image_url": "https://static.pexels.com/photos/4516/sky-people-clouds-crowd.jpg"
+    },
+    {
+      "name": "Dublin Horse Show",
+      "description": "Between the competitions, shopping stands etc. great variety and great value also.Brilliant as usual! Favourite moment: Meeting with those who work with the animal charities at their stands.",
+      "date" : "05.08.2015",
+      "category": "sport",
+      "venue": "Doyal Dublin Society",
+      "city": "Dublin",
+      "location": {
+          "lat": 53.325718,
+          "lng": -6.229688
+      },
+      
+      "allSpots": 12000,
+      "availableSpots": 3451,
+      "image_url": "https://static.pexels.com/photos/6468/animal-brown-horse.jpg"
+    },
+    {
+      "name": "Gojira concert",
+      "description": "Formed in 1996 in Bayonne , France. Gojira  were previously known as Godzilla. The band comprises Joe Duplantier on vocals and guitar, his brother Mario Duplantier on drums, Christian Andreu on guitar and Jean-Michel Labadie on bass. Since forming, Gojira has had no changes in lineup and has released four studio albums, one live album, and one DVD. Gojira are known for their environment-related lyrics.",
+      "date" : "27.08.2015",
+      "category": "sport",
+      "venue": "The Limelight",
+      "city": "Belfast",
+      "location": {
+          "lat": 54.592803,
+          "lng": -5.92843
+      },
+      
+      "allSpots": 44000,
+      "availableSpots": 23682,
+      "image_url": "https://static.pexels.com/photos/1543/landscape-nature-man-person.jpg"
+    },
+    {
+      "name": "Rockathon",
+      "description": "Facilities on the day were very good. Clean enough toilets, when compared with other festivals they were actually very good. Crowd wasn't the biggest, but it was still a really great, friendly atmosphere. Plenty of security around who were all really friendly. The line to get served a drink was a little annoying, took forever considering the size of the crowd, but that would be my only criticism of an otherwise very well run event. Would be an ideal festival to bring children along too. Lots of amusements and rides and picnic areas to sit safely and enjoy the music. I have to say, the bands were top, top quality. Meatloaf opened and was a little unspectacular, in that it was just a guy with a backing track, but he was an amazing singer and did a great job.",
+      "date" : "05.09.2015",
+      "category": "sport",
+      "venue": "Fairyhouse Raceccourse",
+      "city": "Meath",
+      "location": {
+          "lat": 53.480359,
+          "lng": -6.461828
+      },
+      
+      "allSpots": 18000,
+      "availableSpots": 5039,
+      "image_url": "https://static.pexels.com/photos/387/man-person-wall-music.jpg"
+    }
+  ]
