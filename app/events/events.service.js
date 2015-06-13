@@ -6,18 +6,18 @@
         .factory('eventsService', eventsService);
 
     function eventsService() {
-        
+
         console.log("creating this now");
-    
+
         this.listEvents = function () {
-                
+
             return eventMocks;
         };
 
         this.getEvent = function (index) {
             return eventMocks[index];
         };
-        
+
         return this;
 
     }

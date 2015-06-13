@@ -9,8 +9,8 @@
         $routeProvider.when('/', {
             templateUrl: 'app/events/events.html',
             controller: 'EventsCtrl'
-        }).when('/events', {
-            templateUrl: 'app/events/events.html',
+        }).when('/events/:id', {
+            templateUrl: 'app/events/singleEvents.html',
             controller: 'EventsCtrl'
         }).when('/admin', {
             templateUrl: 'app/admin/admin.html',
