@@ -1,7 +1,20 @@
 'use strict';
 
 (function(){
-	var app = angular.module('eventsApp', []);
+
+	var app = angular.module('eventsApp', ['ngRoute']);
+
+    app.config(function($routeProvider) {
+
+        $routeProvider.when('/events', {
+            templateUrl: './events/events.html',
+            controller: 'EventsCtrl'
+        });
+
+        // .otherwish({
+        //     redirectTo: '/'
+        // });
+    });
 
 	//controller as syntax
 	app.controller('SampleController', function(){
