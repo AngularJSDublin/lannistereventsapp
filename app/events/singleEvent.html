@@ -1,1 +1,17 @@
+<div class="event-hero">
+  <img ng-src="{{singleEvent.image_url}}" class="img-responsive">
+</div>
 <h1>{{singleEvent.name}}</h1>
+<div class="row">
+  <div class="col-md-8">
+    <p>{{singleEvent.description}}</p>
+  </div>
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li class="list-group-item">Date: {{singleEvent.date}}</li>
+      <li class="list-group-item">Category: {{singleEvent.category}}</li>
+      <li class="list-group-item">Venue: {{singleEvent.venue}}</li>
+      <li class="list-group-item">City: {{singleEvent.city}}</li>
+    </ul>
+  </div>
+</div>

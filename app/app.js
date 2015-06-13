@@ -10,7 +10,7 @@
             templateUrl: 'app/events/events.html',
             controller: 'EventsCtrl'
         }).when('/events/:id', {
-            templateUrl: 'app/events/singleEvents.html',
+            templateUrl: 'app/events/singleEvent.html',
             controller: 'EventsCtrl'
         }).when('/admin', {
             templateUrl: 'app/admin/admin.html',

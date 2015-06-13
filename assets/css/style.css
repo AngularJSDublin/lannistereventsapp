@@ -22,3 +22,8 @@ body {
 .event-item .event-title {
   margin-top: 0px;
 }
+
+.event-hero {
+  max-height: 500px;
+  overflow: hidden;
+}
