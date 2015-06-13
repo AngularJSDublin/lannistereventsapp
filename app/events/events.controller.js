@@ -5,12 +5,14 @@
         .module('eventsApp')
         .controller('EventsCtrl', EventsCtrl);
 
-    EventsCtrl.$inject = ['eventsService'];
+    EventsCtrl.$inject = ['eventsService', '$scope'];
 
-    function EventsCtrl(eventsService) {
-        
+    function EventsCtrl(eventsService, $scope) {
+
+        $scope.title = 'Events Page';
+
         this.data = eventsService.listEvents();
-        
+
     }
-    
+
 })();

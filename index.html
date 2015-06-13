@@ -19,23 +19,11 @@
     </head>
     <body ng-app='eventsApp'>
 
-        <h1>Hi! This is Your Angular Application Boilerplate.</h1>
+        <a href="/#/">Root page</a>
+        <a href="/#/events">Events page</a>
+        <a href="/#/admin">Admin page</a>
 
-        <div ng-controller="SampleController as ctrl">
-            <p>{{ctrl.welcome}}</p>
-        </div>
-
-        <div ng-controller="SecondController">
-            <p>{{welcomeAgain}}</p>
-        </div>
-
-        <div data-ng-controller="EventsCtrl as vm" >
-            <ul>
-                <li ng-repeat="event in vm.data ">
-                    <p>{{event.name}}</p>
-                </li>
-            </ul>
-        </div>
+        <div ng-view></div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
@@ -43,7 +31,6 @@
         <script src="assets/js/vendor/bootstrap.min.js"></script>
 
         <script src="assets/js/vendor/angular.min.js"></script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-route.min.js"></script>
 
         <script src="app/app.js"></script>
