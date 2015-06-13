@@ -28,6 +28,14 @@
         <div ng-controller="SecondController">
             <p>{{welcomeAgain}}</p>
         </div>
+        
+        <div data-ng-controller="EventsCtrl as vm" >
+            <ul>
+                <li ng-repeat="event in vm.data ">
+                    <p>{{event.name}}</p>
+                </li>
+            </ul>
+        </div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
@@ -37,6 +45,13 @@
         <script src="assets/js/vendor/angular.min.js"></script>
 
         <script src="app/app.js"></script>
+        
+        <script src="app/events/events.controller.js"></script>
+        <script src="app/events/events.service.js"></script>
+
+
+        
+        
 
     </body>
 </html>
