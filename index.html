@@ -18,9 +18,9 @@
         <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body ng-app='eventsApp'>
-  
+
         <h1>Hi! This is Your Angular Application Boilerplate.</h1>
-        
+
         <div ng-controller="SampleController as ctrl">
             <p>{{ctrl.welcome}}</p>
         </div>
@@ -28,14 +28,16 @@
         <div ng-controller="SecondController">
             <p>{{welcomeAgain}}</p>
         </div>
-        
-        <div data-ng-controller="EventsCtrl as vm" >
-            <ul>
-                <li ng-repeat="event in vm.data ">
-                    <p>{{event.name}}</p>
-                </li>
-            </ul>
+
+        <div ng-controller="EventsCtrl">
+          <div ng-repeat="event in events">
+            <img src="{{event.image_url}}" width="100">
+              <h2>{{event.name}}</h2>
+              <p>{{event.description}}</p>
+          </div>
         </div>
+
+        <div ng-view></div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
@@ -45,13 +47,8 @@
         <script src="assets/js/vendor/angular.min.js"></script>
 
         <script src="app/app.js"></script>
-        
+
         <script src="app/events/events.controller.js"></script>
         <script src="app/events/events.service.js"></script>
-
-
-        
-        
-
     </body>
 </html>
