@@ -10,6 +10,7 @@
     function eventsService(database) {
         
         var service = {
+            getEvent: getEvent,
             listEvents: listEvents
         };
         return service;
@@ -17,11 +18,12 @@
         /////////
 
         function listEvents() {
-            return eventMocks;
+            console.log(database.events());
+            return database.events();
         };
 
         function getEvent(index) {
-            return eventMocks[index];
+            return database.events()[index];
         };
 
     }

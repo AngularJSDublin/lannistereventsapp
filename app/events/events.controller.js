@@ -15,9 +15,11 @@
 
         $scope.events = eventsService.listEvents();
 
-        $scope.singleEvent = $scope.events.filter(function(item) {
-            return item.id === $routeParams.id;
-        })[0];
+        $scope.singleEvent = eventsService.getEvent($routeParams.id);
+        
+        //$scope.singleEvent = $scope.events.filter(function(item) {
+        //    return item.id === $routeParams.id;
+        //})[0];
 
     }
 
