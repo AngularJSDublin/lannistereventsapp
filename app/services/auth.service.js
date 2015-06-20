@@ -31,6 +31,6 @@
             "email": "graham@hrpr.co"
         }
     ];
-    var authMocks = userData[0]
+    var authMocks = userData[0];
 
 })();

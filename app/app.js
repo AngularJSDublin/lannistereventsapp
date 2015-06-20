@@ -2,7 +2,7 @@
 
 (function(){
 
-	var app = angular.module('eventsApp', ['ngRoute']);
+    var app = angular.module('eventsApp', ['ngRoute']);
 
     app.config(function($routeProvider) {
 
@@ -16,19 +16,11 @@
             templateUrl: 'app/admin/admin.html',
             controller: 'AdminCtrl'
         }).when('/login', {
-            templateUrl: 'app/login/login.html'
+            templateUrl: 'app/login/login.html',
+            controller: 'LoginCtrl'
         }).when('/register', {
             templateUrl: 'app/login/register.html'
         });
     });
-
-	//controller as syntax
-	app.controller('SampleController', function(){
-		this.welcome = 'Welcome to the first AngularJS workshop.'
-	});
-
-	app.controller("SecondController", function($scope){
-		$scope.welcomeAgain = 'By the end of the workshops you will build the Angular events app and hopefully understand the framework on deeper level.'
-	})
 
 })()
