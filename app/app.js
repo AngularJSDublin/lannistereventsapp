@@ -17,6 +17,8 @@
             controller: 'AdminCtrl'
         }).when('/login', {
             templateUrl: 'app/login/login.html'
+        }).when('/register', {
+            templateUrl: 'app/login/register.html'
         });
     });
 
