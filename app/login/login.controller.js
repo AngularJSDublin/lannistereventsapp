@@ -5,11 +5,10 @@
     .module('eventsApp')
     .controller('LoginCtrl', LoginCtrl);
 
-    LoginCtrl.$inject = ['$scope', '$routeParams', 'authService'];
+    LoginCtrl.$inject = ['$scope', '$routeParams', 'authService', '$rootScope'];
 
-    function LoginCtrl($scope, $routeParams, authService) {
-        $rootScope.user = authService.getUser();
-        console.log($scope.user.role);
+    function LoginCtrl($scope, $routeParams, authService, $rootScope) {
+        console.log($rootScope.user.role);
     }
 
 })();
