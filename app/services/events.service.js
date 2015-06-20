@@ -18,7 +18,6 @@
         /////////
 
         function listEvents() {
-            console.log(database.events());
             return database.events();
         };
 
