@@ -3,22 +3,26 @@
 
     angular
         .module('eventsApp')
-        .factory('eventsService', eventsService);
+        .service('eventsService', eventsService);
+    
+     eventsService.$inject = ['database'];
 
-    function eventsService() {
+    function eventsService(database) {
+        
+        var service = {
+            listEvents: listEvents
+        };
+        return service;
+        
+        /////////
 
-        console.log("creating this now");
-
-        this.listEvents = function () {
-
+        function listEvents() {
             return eventMocks;
         };
 
-        this.getEvent = function (index) {
+        function getEvent(index) {
             return eventMocks[index];
         };
-
-        return this;
 
     }
 

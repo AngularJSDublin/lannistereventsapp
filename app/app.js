@@ -2,7 +2,7 @@
 
 (function(){
 
-    var app = angular.module('eventsApp', ['ngRoute']);
+    var app = angular.module('eventsApp', ['ngRoute', 'firebase']);
 
     app.config(function($routeProvider) {
 
