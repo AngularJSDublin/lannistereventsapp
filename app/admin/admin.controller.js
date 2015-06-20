@@ -5,11 +5,15 @@
         .module('eventsApp')
         .controller('AdminCtrl', AdminCtrl);
 
-    AdminCtrl.$inject = ['$scope'];
+    AdminCtrl.$inject = ['$scope','eventsService'];
 
-    function AdminCtrl($scope) {
+    function AdminCtrl($scope, eventsService) {
 
         $scope.title = 'Admin Page';
+
+        $scope.userRole = 'admin';
+
+        $scope.events = eventsService.listEvents();
 
     }
 

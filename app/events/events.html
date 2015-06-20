@@ -12,7 +12,16 @@
         <h2 class="event-title"><a ng-href="/#/events/{{event.id}}">{{event.name}}</a></h2>
         <date>{{event.date}}</date>
         <p>{{event.description}}</p>
-        <a ng-href="/#/events/{{event.id}}" class="btn btn-primary pull-right">Details</a>
+        <div ng-show="userRole == 'admin'">
+          <div class="pull-left">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Attendees: {{event.allSpots - event.availableSpots}}
+          </div>
+          <div class="pull-right">
+            <a ng-href="" class="btn btn-danger">Remove</a>
+            <a ng-href="" class="btn btn-default">Edit</a>
+            <a ng-href="/#/events/{{event.id}}" class="btn btn-primary">View</a>
+          </div>
+        <a ng-show="userRole != 'admin'" ng-href="/#/events/{{event.id}}" class="btn btn-primary pull-right">Details</a>
       </div>
     </div>
   </div>
