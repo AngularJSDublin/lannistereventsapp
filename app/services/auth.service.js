@@ -17,7 +17,6 @@
 
     }
 
-    var authMocks = userData[0]
     var userData = [
         {
             "id": "1",
@@ -32,5 +31,6 @@
             "email": "graham@hrpr.co"
         }
     ];
+    var authMocks = userData[0]
 
 })();
