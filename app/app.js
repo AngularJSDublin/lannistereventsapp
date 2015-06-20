@@ -15,6 +15,8 @@
         }).when('/admin', {
             templateUrl: 'app/admin/admin.html',
             controller: 'AdminCtrl'
+        }).when('/login', {
+            templateUrl: 'app/login/login.html'
         });
     });
 
