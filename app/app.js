@@ -28,14 +28,14 @@
       });;
   });
 
-	app.run(function(authService, $rootScope, $route) {
+	app.run(function(authService, $rootScope, $route, $location) {
 
 		// TODO: this is just for testing until we have a functional login form
 		authService.login();
 
 		$rootScope.$on('$routeChangeStart', function (event, next, current) {
 
-			var requireLogin = next.data ? next.data.requireLogin : false;
+			var requireLogin = next && next.data ? next.data.requireLogin : false;
 
 			// check if the next page requires a login
 			if (requireLogin) {
@@ -55,7 +55,9 @@
 							console.log('access control: role required');
 							if( next.data.roles.indexOf($rootScope.user.role) < 0 ) {
 								console.log('access control: user does not have required role');
-								event.preventDefault();
+                event.preventDefault();
+                console.log('redirecting');
+								$location.path( "/not-authorised" );
 							}else {
 								console.log('access control: user has role, allow access');
 							}
