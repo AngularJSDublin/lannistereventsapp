@@ -2,13 +2,23 @@
     'use strict';
 
     angular
-    .module('eventsApp')
-    .controller('LoginCtrl', LoginCtrl);
+        .module('eventsApp')
+        .controller('LoginCtrl', LoginCtrl);
 
     LoginCtrl.$inject = ['$scope', '$routeParams', 'authService', '$rootScope'];
 
     function LoginCtrl($scope, $routeParams, authService, $rootScope) {
-        console.log($rootScope.user.role);
+        console.log($rootScope.user);
+
+        $scope.credentials = {
+            email: "",
+            password: ""
+        };
+
+        $scope.login = function () {
+            authService.login($scope.credentials);
+        };
+
     }
 
 })();

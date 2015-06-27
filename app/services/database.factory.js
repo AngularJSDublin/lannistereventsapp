@@ -12,6 +12,10 @@
         console.log('Init DB connection');
 
         var url = 'https://lannistereventsdb.firebaseio.com/';
+        
+        function url() {
+           return url;
+        }
 
         function categories() {
            return $firebaseArray(new Firebase(url + 'categories'));
@@ -22,6 +26,7 @@
         }
 
         return {
+            url, 
             categories: categories,
             events: events
         };
