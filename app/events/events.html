@@ -4,12 +4,12 @@
   <div class="panel-body">
     <div class="media">
       <div class="media-left">
-        <a ng-href="/#/events/{{event.id}}">
+        <a ng-href="/#/events/{{event.$id}}">
           <img ng-src="{{event.image_url}}" class="media-object event-thumb">
         </a>
       </div>
       <div class="media-body">
-        <h2 class="event-title"><a ng-href="/#/events/{{event.id}}">{{event.name}}</a></h2>
+        <h2 class="event-title"><a ng-href="/#/events/{{event.$id}}">{{event.name}}</a></h2>
         <date>{{event.date}}</date>
         <p>{{event.description}}</p>
         <div ng-show="user.role == 'admin'">
@@ -19,10 +19,10 @@
           <div class="pull-right">
             <a ng-href="" class="btn btn-danger">Remove</a>
             <a ng-href="" class="btn btn-default">Edit</a>
-            <a ng-href="/#/events/{{event.id}}" class="btn btn-primary">View</a>
+            <a ng-href="/#/events/{{event.$id}}" class="btn btn-primary">View</a>
           </div>
         </div>
-        <a ng-show="user.role != 'admin'" ng-href="/#/events/{{event.id}}" class="btn btn-primary pull-right">Details</a>
+        <a ng-show="user.role != 'admin'" ng-href="/#/events/{{event.$id}}" class="btn btn-primary pull-right">Details</a>
     </div>
   </div>
 </div>
