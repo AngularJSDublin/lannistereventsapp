@@ -4,29 +4,29 @@
 
     var app = angular.module('eventsApp', ['ngRoute', 'firebase']);
 
-      app.config(function($routeProvider) {
+    app.config(function($routeProvider) {
 
-      $routeProvider.when('/', {
-          templateUrl: 'app/events/events.html',
-          controller: 'EventsCtrl'
-      }).when('/events/:id', {
-          templateUrl: 'app/events/singleEvent.html',
-          controller: 'EventsCtrl'
-      }).when('/admin', {
-          templateUrl: 'app/admin/admin.html',
-          controller: 'AdminCtrl',
-                    data: {
-                      requireLogin: true,
-                               roles: ['admin']
-                  }
-      }).when('/login', {
-          templateUrl: 'app/login/login.html',
-          controller: 'LoginCtrl'
-      }).when('/register', {
+        $routeProvider.when('/', {
+            templateUrl: 'app/events/events.html',
+            controller: 'EventsCtrl'
+        }).when('/events/:id', {
+            templateUrl: 'app/events/singleEvent.html',
+            controller: 'EventsCtrl'
+        }).when('/admin', {
+            templateUrl: 'app/admin/admin.html',
+            controller: 'AdminCtrl',
+            data: {
+                requireLogin: true,
+                roles: ['admin']
+            }
+        }).when('/login', {
+            templateUrl: 'app/login/login.html',
+            controller: 'LoginCtrl'
+        }).when('/register', {
             templateUrl: 'app/login/register.html',
             controller: 'RegisterCtrl'
-      });;
-  });
+        });
+    });
 
     app.run(function(authService, $rootScope, $route, $location) {
 
@@ -48,27 +48,25 @@
                         // not going to #login, we should redirect now
                         $location.path( "/login" );
                     }
-                   }
+                }
             }else {
-                    // user is logged in
-                    console.log('access control: user is logged in');
-                    if( next.data.roles ) {
-                            console.log('access control: role required');
-                            //if( next.data.roles.indexOf($rootScope.user.role) < 0 ) {
-                   if( next.data.roles.indexOf(authService.getRole()) < 0 ) {
-         //if(authService.isAdmin())
-         console.log('access control: user does not have required role');
-                event.preventDefault();
-                console.log('redirecting');
-                                $location.path( "/not-authorised" );
-                            }else {
-                                console.log('access control: user has role, allow access');
-                            }
+                // user is logged in
+                console.log('access control: user is logged in');
+                if( typeof next.data != 'undefined' && typeof next.data.roles != 'undefined' ) {
+                    console.log('access control: role required');
+                    //if( next.data.roles.indexOf($rootScope.user.role) < 0 ) {
+                    if( next.data.roles.indexOf(authService.getRole()) < 0 ) {
+                        //if(authService.isAdmin())
+                        console.log('access control: user does not have required role');
+                        event.preventDefault();
+                        console.log('redirecting');
+                        $location.path( "/not-authorised" );
+                    }else {
+                        console.log('access control: user has role, allow access');
                     }
                 }
             }
         });
-
     });
 
     //controller as syntax
@@ -78,6 +76,6 @@
 
     app.controller("SecondController", function($scope){
         $scope.welcomeAgain = 'By the end of the workshops you will build the Angular events app and hopefully understand the framework on deeper level.'
-    })
+    });
 
 })()
