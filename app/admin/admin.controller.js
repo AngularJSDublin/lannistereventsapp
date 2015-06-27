@@ -9,7 +9,7 @@
 
     function AdminCtrl($scope, eventsService, authService) {
         $scope.title = 'Admin Page';
-        $scope.events = eventsService.listEvents();
+        $scope.events = eventsService.getEvents();
         $scope.user = authService.getUser();
         console.log('user role: '+$scope.user.role);
     }
