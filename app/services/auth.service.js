@@ -49,6 +49,19 @@
             return $rootScope.user;
         };
 
+        this.getUsers = function() {
+            return userData;
+        }
+
+        this.registerUser = function(user) {
+
+            // create a dummy id and set role to user
+            user.id = (userData.length + 1) + '';
+            user.role = 'user';
+
+            userData.push(user);
+        };
+
         return this;
 
     }

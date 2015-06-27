@@ -49,3 +49,7 @@ body {
   margin-top: 10px;
   display: block;
 }
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

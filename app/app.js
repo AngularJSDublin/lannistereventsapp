@@ -23,8 +23,9 @@
           templateUrl: 'app/login/login.html',
           controller: 'LoginCtrl'
       }).when('/register', {
-          templateUrl: 'app/login/register.html'
-      });
+            templateUrl: 'app/login/register.html',
+            controller: 'RegisterCtrl'
+      });;
   });
 
 	app.run(function(authService, $rootScope, $route) {
