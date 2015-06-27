@@ -22,7 +22,7 @@
         }
 
         function events() {
-          return $firebaseArray(new Firebase(url + 'events')).$loaded();
+            return $firebaseArray(new Firebase(url + 'events'));
         }
 
         return {
