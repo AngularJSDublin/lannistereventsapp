@@ -17,7 +17,7 @@
           controller: 'AdminCtrl',
 					data: {
 			      	requireLogin: true,
-							roles: ['admin']
+							   roles: ['admin']
 				  }
       }).when('/login', {
           templateUrl: 'app/login/login.html',
@@ -31,7 +31,7 @@
 	app.run(function(authService, $rootScope, $route, $location) {
 
 		// TODO: this is just for testing until we have a functional login form
-		authService.login();
+		//authService.login();
 
 		$rootScope.$on('$routeChangeStart', function (event, next, current) {
 
@@ -53,8 +53,10 @@
 					console.log('access control: user is logged in');
 					if( next.data.roles ) {
 							console.log('access control: role required');
-							if( next.data.roles.indexOf($rootScope.user.role) < 0 ) {
-								console.log('access control: user does not have required role');
+							//if( next.data.roles.indexOf($rootScope.user.role) < 0 ) {
+				   if( next.data.roles.indexOf(authService.getRole()) < 0 ) {
+         //if(authService.isAdmin()) 
+         console.log('access control: user does not have required role');
                 event.preventDefault();
                 console.log('redirecting');
 								$location.path( "/not-authorised" );
