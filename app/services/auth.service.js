@@ -13,7 +13,7 @@
         var auth = $firebaseAuth(new Firebase(database.url));
 
         this.login = function (credentials) {
-            var self = this;a83219b1
+            var self = this;
 
             auth.$authWithPassword(
                 credentials
