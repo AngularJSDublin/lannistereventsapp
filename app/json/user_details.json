@@ -1,0 +1,11 @@
+{ "user_details" : {
+  "simplelogin:1": {
+    "name" : "Graham Harper", "role": "admin"
+},
+  "simplelogin:3": {
+     "name" : "Alan Larkin", "role": "admin"
+},
+  "simplelogin:4": {
+    "name" : "Pete", "role": "admin"
+ }    
+}}
