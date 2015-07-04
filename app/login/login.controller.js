@@ -8,7 +8,7 @@
     LoginCtrl.$inject = ['$scope', '$routeParams', 'authService', '$rootScope'];
 
     function LoginCtrl($scope, $routeParams, authService, $rootScope) {
-        console.log($rootScope.user);
+        // console.log('$rootScope.user: '+$rootScope.user);
 
         $scope.credentials = {
             email: "",
