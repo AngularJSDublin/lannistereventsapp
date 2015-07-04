@@ -2,7 +2,7 @@
 
 (function(){
 
-    var app = angular.module('eventsApp', ['ngRoute', 'firebase']);
+    var app = angular.module('eventsApp', ['ngRoute', 'firebase', 'angular-date-picker-polyfill']);
 
     app.config(function($routeProvider) {
 
@@ -27,7 +27,7 @@
             controller: 'RegisterCtrl'
         }).when('/event/create', {
             templateUrl: 'app/events/createEvent.html',
-            controller: 'EventsCtrl'
+            controller: 'CreateEventCtrl'
         }).when('/event/edit', {
             templateUrl: 'app/events/editEvent.html',
             controller: 'EventsCtrl'

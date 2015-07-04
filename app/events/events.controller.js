@@ -21,4 +21,21 @@
         });
     }
 
+    angular
+        .module('eventsApp')
+        .controller('CreateEventCtrl', CreateEventCtrl);
+
+    CreateEventCtrl.$inject = ['$scope','eventsService', '$routeParams'];
+
+    function CreateEventCtrl($scope, eventsService, $routeParams) {
+
+        console.log($routeParams);
+
+        $scope.title = 'Create Events Page';
+
+        $scope.submitForm = function(isValid) {
+            console.log("Submit Form...Status is : " + isValid);
+            return true;
+        };
+    }
 })();
