@@ -9,7 +9,7 @@
 
     function EventsCtrl($scope, eventsService, $routeParams) {
 
-        console.log($routeParams);
+        // console.log($routeParams);
 
         $scope.title = 'Events Page';
 

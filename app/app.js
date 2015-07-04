@@ -25,13 +25,21 @@
         }).when('/register', {
             templateUrl: 'app/login/register.html',
             controller: 'RegisterCtrl'
+        }).when('/logout', {
+            resolve: {
+                data: ['authService', function(authService) {
+                    authService.logout();
+                }]
+            }
+        }).otherwise({
+            redirectTo: '/'
         });
     });
 
     app.run(function(authService, $rootScope, $route, $location) {
 
-        // TODO: this is just for testing until we have a functional login form
-        //authService.login();
+        // TODO: if user is authenticated, get the user data
+        // authService.getAuth();
 
         $rootScope.$on('$routeChangeStart', function (event, next, current) {
 
@@ -40,7 +48,7 @@
             // check if the next page requires a login
             if (requireLogin) {
                 console.log('access control: login required');
-                if (!authService.isAuthenticated()) {
+                if (!authService.getAuth()) {
                     // user is not logged in
                     console.log('access control: user not authenticated, deny access');
                     event.preventDefault();
@@ -48,21 +56,20 @@
                         // not going to #login, we should redirect now
                         $location.path( "/login" );
                     }
-                }
-            }else {
-                // user is logged in
-                console.log('access control: user is logged in');
-                if( typeof next.data != 'undefined' && typeof next.data.roles != 'undefined' ) {
-                    console.log('access control: role required');
-                    //if( next.data.roles.indexOf($rootScope.user.role) < 0 ) {
-                    if( next.data.roles.indexOf(authService.getRole()) < 0 ) {
-                        //if(authService.isAdmin())
-                        console.log('access control: user does not have required role');
-                        event.preventDefault();
-                        console.log('redirecting');
-                        $location.path( "/not-authorised" );
-                    }else {
-                        console.log('access control: user has role, allow access');
+                }else {
+                    // user is logged in
+                    console.log('access control: user is logged in');
+                    if( typeof next.data != 'undefined' && typeof next.data.roles != 'undefined' ) {
+                        console.log('access control: role required');
+                        if( next.data.roles.indexOf(authService.getRole()) < 0 ) {
+                            //if(authService.isAdmin())
+                            console.log('access control: user does not have required role');
+                            event.preventDefault();
+                            console.log('redirecting');
+                            $location.path( "/not-authorised" );
+                        }else {
+                            console.log('access control: user has role, allow access');
+                        }
                     }
                 }
             }
