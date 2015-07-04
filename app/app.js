@@ -31,6 +31,12 @@
                     authService.logout();
                 }]
             }
+        }).when('/event/create', {
+            templateUrl: 'app/events/createEvent.html',
+            controller: 'EventsCtrl'
+        }).when('/event/edit', {
+            templateUrl: 'app/events/editEvent.html',
+            controller: 'EventsCtrl'
         }).otherwise({
             redirectTo: '/'
         });

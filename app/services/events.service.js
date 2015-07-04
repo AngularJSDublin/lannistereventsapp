@@ -24,7 +24,6 @@
     function eventsService(database, $firebaseArray) {
 
         function getEvents() {
-
           return database.events()
         };
 
