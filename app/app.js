@@ -47,6 +47,8 @@
         // if the user is already authenticated
         // set the user on the scope
         if(authService.getAuth()) {
+            // TODO: replace authService.getAuth() with something like UserService.getUser()
+            // because getAuth doesn't contain all user data.
             authService.setUser( authService.getAuth() );
         }
 
