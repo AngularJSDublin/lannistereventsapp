@@ -13,7 +13,7 @@
         var auth = $firebaseAuth(new Firebase(database.url));
 
         this.login = function (credentials) {
-            var self = this;
+            var self = this;a83219b1
 
             auth.$authWithPassword(
                 credentials
@@ -28,7 +28,6 @@
                 .once('value', function (user) {
                     self.setUser(getFirstResult(user.val()));
                 });
-
             }).catch(function (error) {
                 console.error("Authentication failed:", error);
             });
@@ -83,7 +82,10 @@
         this.logout = function () {
             console.log('called authService.logout()');
             auth.$unauth();
+            $rootScope.user = null;
         };
+
+        this.onAuth = auth.$onAuth;
 
         return this;
 

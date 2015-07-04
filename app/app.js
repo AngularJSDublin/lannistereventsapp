@@ -2,7 +2,7 @@
 
 (function(){
 
-    var app = angular.module('eventsApp', ['ngRoute', 'firebase']);
+    var app = angular.module('eventsApp', ['ngRoute', 'firebase', 'angular-date-picker-polyfill']);
 
     app.config(function($routeProvider) {
 
@@ -33,7 +33,7 @@
             }
         }).when('/event/create', {
             templateUrl: 'app/events/createEvent.html',
-            controller: 'EventsCtrl'
+            controller: 'CreateEventCtrl'
         }).when('/event/edit', {
             templateUrl: 'app/events/editEvent.html',
             controller: 'EventsCtrl'
@@ -45,8 +45,22 @@
     app.run(function(authService, $rootScope, $route, $location) {
 
         // TODO: if user is authenticated, get the user data
-        // authService.getAuth();
+        if(authService.getAuth()) {
+            authService.setUser( authService.getAuth() );
+        }
 
+        // setup a callback for when the authentication state changes
+        authService.onAuth(function(authData) {
+          if (authData) {
+            console.log("Logged in as:", authData.uid);
+          } else {
+            console.log("Logged out");
+            $location.path( "/" );
+          }
+        });
+
+        // Access Control
+        // Check if the route being navigated to requires a login/role
         $rootScope.$on('$routeChangeStart', function (event, next, current) {
 
             var requireLogin = next && next.data ? next.data.requireLogin : false;
