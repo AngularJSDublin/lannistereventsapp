@@ -18,7 +18,7 @@
             data: {
                 requireLogin: true,
                 roles: ['admin']
-            }
+            },
         }).when('/login', {
             templateUrl: 'app/login/login.html',
             controller: 'LoginCtrl'
@@ -44,7 +44,8 @@
 
     app.run(function(authService, $rootScope, $route, $location) {
 
-        // TODO: if user is authenticated, get the user data
+        // if the user is already authenticated
+        // set the user on the scope
         if(authService.getAuth()) {
             authService.setUser( authService.getAuth() );
         }
@@ -53,6 +54,11 @@
         authService.onAuth(function(authData) {
           if (authData) {
             console.log("Logged in as:", authData.uid);
+            // TODO: Ideally on successful login we should redirect
+            // the user back to where they were originally trying to get to
+            var redirectTo = $location.search().redirectTo;
+            // console.log('redirecting to: ' + redirectTo);
+            $location.url( redirectTo );
           } else {
             console.log("Logged out");
             $location.path( "/" );
@@ -74,7 +80,7 @@
                     event.preventDefault();
                     if ( next.templateUrl != "app/login/login.html" ) {
                         // not going to #login, we should redirect now
-                        $location.path( "/login" );
+                        $location.url( "/login?redirectTo=" + next.originalPath );
                     }
                 }else {
                     // user is logged in

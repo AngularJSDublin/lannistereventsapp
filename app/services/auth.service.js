@@ -23,11 +23,11 @@
             ).then(function (authData) {
                 console.log("Logged in as:", authData);
                 self.setUser(authData);
+                return true;
             }).catch(function (error) {
                 console.error("Authentication failed:", error);
+                return false;
             });
-
-            return true;
         };
 
         // retrieve the client's current authentication state
