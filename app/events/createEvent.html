@@ -12,7 +12,6 @@
                         <div class="controls ">
                             <input type='datetime-local' ng-model='startdate'/>
                         </div>
-                        <span ng-show="createEventForm.startdate.$error.required">Email is required.</span>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="enddate">End date / time:</label>
@@ -33,7 +32,7 @@
                     <div class="form-group">
                         <label class="control-label" for="imgpreview">Image Preview:</label>
                         <div style="border:2px solid #888;">
-                            <img id="imgpreview" ng-src="{{imageurl}}">
+                            <img id="imgpreview" ng-src="{{imageurl}}" width="400" height="400">
                         </div>
                     </div>
                 </div>
