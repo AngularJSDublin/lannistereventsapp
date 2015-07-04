@@ -9,21 +9,24 @@
 
     function authService($rootScope, database, $firebaseAuth) {
 
-        // console.log("creating authService now");
-
         // create an instance of the authentication service
         var auth = $firebaseAuth(new Firebase(database.url));
 
         this.login = function (credentials) {
             var self = this;
-            console.log('called authService.login()');
 
             auth.$authWithPassword(
                 credentials
             ).then(function (authData) {
-                console.log("Logged in as:", authData);
-                self.setUser(authData);
-                return true;
+                var db = new Firebase('https://lannistereventsdb.firebaseio.com/' + 'user_details');
+
+                db
+                .orderByChild('uid')
+                .startAt(authData.uid)
+                .endAt(authData.uid)
+                .once('value', function (user) {
+                    self.setUser(getFirstResult(user.val()));
+                });
             }).catch(function (error) {
                 console.error("Authentication failed:", error);
                 return false;
@@ -57,10 +60,6 @@
 
         this.setUser = function (user) {
             $rootScope.user = user;
-            // If a user authenticates using a password that means they're an admin
-            if($rootScope.user.provider === "password") {
-              $rootScope.user.role = 'admin';
-            }
         };
 
         this.getUser = function () {
@@ -88,6 +87,15 @@
 
         return this;
 
+    }
+
+    // return the first property of the object
+    function getFirstResult(obj) {
+        for (var index in obj) {
+            if(obj.hasOwnProperty(index)) {
+                return obj[index];
+            }
+        }
     }
 
 })();
