@@ -9,19 +9,20 @@
 
     function authService($rootScope, database, $firebaseAuth) {
 
-        console.log("creating authService now");
+        // console.log("creating authService now");
 
         // create an instance of the authentication service
         var auth = $firebaseAuth(new Firebase(database.url));
 
         this.login = function (credentials) {
-            console.log('authService.login()');
+            var self = this;
+            console.log('called authService.login()');
 
             auth.$authWithPassword(
                 credentials
             ).then(function (authData) {
                 console.log("Logged in as:", authData);
-                setUser(authData);
+                self.setUser(authData);
             }).catch(function (error) {
                 console.error("Authentication failed:", error);
             });
@@ -29,24 +30,32 @@
             return true;
         };
 
-        this.isAuthenticated = function () {
-            return typeof $rootScope.user != 'undefined';
-        };
+        // retrieve the client's current authentication state
+        this.getAuth = function () {
+            var authData = auth.$getAuth();
+
+            if (authData) {
+                console.log("Logged in as:", authData.uid);
+            } else {
+                console.log("Not logged in");
+            }
+            return authData;
+        }
 
         this.isAdmin = function () {
-            return this.isAuthenticated()
+            return this.getAuth()
                 && $rootScope.user.role === 'admin';
         };
 
         this.getRole = function () {
-            if( this.isAuthenticated() ){
+            if( this.getAuth() ){
                 return $rootScope.user.role;
             }else {
                 return null;
             }
         };
 
-        var setUser = function (user) {
+        this.setUser = function (user) {
             $rootScope.user = user;
             // If a user authenticates using a password that means they're an admin
             if($rootScope.user.provider === "password") {
@@ -68,6 +77,14 @@
             // TODO: register user with firebase
             // https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-users-and-authentication-createusercredentials
         };
+
+        this.logout = function () {
+            console.log('called authService.logout()');
+            auth.$unauth();
+            $rootScope.user = null;
+        };
+
+        this.onAuth = auth.$onAuth;
 
         return this;
 

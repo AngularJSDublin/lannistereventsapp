@@ -24,11 +24,13 @@
     <div class="container">
         <header class="header clearfix">
             <nav>
-            <ul class="nav nav-pills pull-right">
-                <li role="presentation" check-active-nav><a href="/#/">Events</a></li>
-                <li role="presentation" check-active-nav><a href="/#/admin">Admin</a></li>
-            </ul>
+              <ul class="nav nav-pills pull-right">
+                  <li role="presentation" check-active-nav><a href="/#/">Events</a></li>
+                  <li role="presentation" check-active-nav><a href="/#/admin">Admin</a></li>
+                  <li role="presentation" check-active-nav ng-show="user"><a href="/#/logout">Logout</a></li>
+              </ul>
             </nav>
+            <p role="presentation" ng-show="user" class="navbar-text pull-right">{{user.uid}}</p>
             <h3><a href="/#/">Lannister Events</a></h3>
         </header>
 
@@ -55,6 +57,8 @@
     <script src="app/services/database.factory.js"></script>
     <script src="app/services/events.service.js"></script>
     <script src="app/services/auth.service.js"></script>
+    <script src="app/services/users.service.js"></script>
+
 
     <script src="app/admin/admin.controller.js"></script>
 

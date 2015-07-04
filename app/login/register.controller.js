@@ -5,7 +5,7 @@
     .module('eventsApp')
     .controller('RegisterCtrl', RegisterCtrl);
 
-    function RegisterCtrl($scope, authService, $location) {
+    function RegisterCtrl($scope, userService, $location) {
 
         $scope.register = function(user, form) {
             // if form is invalid show error message
@@ -13,14 +13,19 @@
                 return;
             }
 
-            // register user with service hereand clear model on scope
-            authService.registerUser(user);
+            userService
+            .registerUser(user)
+            .then(function(data) {
+                // clear the register form
+                $scope.newUser = {};
+                // redirect to login page
+                $location.path('/login');
 
-            // clear the register form
-            $scope.newUser = {};
 
-            // redirect to login page
-            $location.path('/login');
+            }).catch(function(err) {
+                console.log(err);
+            });
+
         };
 
     }
