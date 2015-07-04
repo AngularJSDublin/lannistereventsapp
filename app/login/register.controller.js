@@ -28,10 +28,6 @@
 
         };
 
-        userService.getUsers().$loaded().then(function(users) {
-            console.log(users);
-        });
-
     }
 
 })();
