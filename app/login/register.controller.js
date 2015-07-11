@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-    .module('eventsApp')
+    .module('eventsApp.RegisterCtrl',[])
     .controller('RegisterCtrl', RegisterCtrl);
 
     RegisterCtrl.$inject = ['$scope','userService', '$location', 'authService'];

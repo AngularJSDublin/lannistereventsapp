@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('eventsApp')
+        .module('eventsApp.eventsService',[])
         .service('eventsService', eventsService);
 
-    eventsService.$inject = ['database', '$firebaseArray'];
+    eventsService.$inject = ['$firebaseArray','FIREBASE_URL'];
 
     function toArray(obj) {
         var result = [];
@@ -21,10 +21,12 @@
         return result;
     }
 
-    function eventsService(database, $firebaseArray) {
+    function eventsService($firebaseArray, FIREBASE_URL) {
+        var firebase = new Firebase(FIREBASE_URL);
+        var eventsRef = firebase.child('events');
 
         function getEvents() {
-          return database.events()
+          return $firebaseArray(eventsRef);
         };
 
         return {

@@ -1,8 +1,20 @@
-'use strict';
-
 (function(){
+    'use strict';
 
-    var app = angular.module('eventsApp', ['ngRoute', 'firebase', 'angular-date-picker-polyfill']);
+    var app = angular.module('eventsApp', [
+        'ngRoute',
+        'firebase',
+        'angular-date-picker-polyfill',
+        'eventsApp.config',
+        'eventsApp.authService',
+        'eventsApp.userService',
+        'eventsApp.eventsService',
+        'eventsApp.AdminCtrl',
+        'eventsApp.EventsCtrl',
+        'eventsApp.LoginCtrl',
+        'eventsApp.RegisterCtrl',
+        'eventsApp.checkActiveNav',
+    ]);
 
     app.config(function($routeProvider) {
 
@@ -116,4 +128,4 @@
         $scope.welcomeAgain = 'By the end of the workshops you will build the Angular events app and hopefully understand the framework on deeper level.'
     });
 
-})()
+})();

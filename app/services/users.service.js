@@ -2,13 +2,13 @@
     'use strict';
 
     angular
-        .module('eventsApp')
+        .module('eventsApp.userService',[])
         .factory('userService', UserService);
 
-    UserService.$inject = ['database', '$firebaseAuth', '$firebaseObject'];
+    UserService.$inject = ['FIREBASE_URL', '$firebaseAuth', '$firebaseObject'];
 
-    function UserService(database, $firebaseAuth, $firebaseObject) {
-        var firebase = new Firebase(database.url);
+    function UserService(FIREBASE_URL, $firebaseAuth, $firebaseObject) {
+        var firebase = new Firebase(FIREBASE_URL);
         var auth = $firebaseAuth(firebase);
         var usersRef = firebase.child('users');
 

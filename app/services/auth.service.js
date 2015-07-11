@@ -2,25 +2,24 @@
     'use strict';
 
     angular
-        .module('eventsApp')
+        .module('eventsApp.authService',[])
         .factory('authService', authService);
 
-    authService.$inject = ['$rootScope', 'database', '$firebaseAuth', 'userService'];
+    authService.$inject = ['$rootScope', 'FIREBASE_URL', '$firebaseAuth', 'userService'];
 
-    function authService($rootScope, database, $firebaseAuth, userService) {
+    function authService($rootScope, FIREBASE_URL, $firebaseAuth, userService) {
 
         // create an instance of the authentication service
-        var auth = $firebaseAuth(new Firebase(database.url));
+        var auth = $firebaseAuth(new Firebase(FIREBASE_URL));
 
         // authenticated a user with email and password
-        // returns a
+        // returns a promise
         this.login = function (credentials) {
             var self = this;
 
             // login with password
             var authPromise = auth.$authWithPassword( credentials );
 
-            //
             authPromise.then(function (authData) {
                 // make the user available to the rest of the app
                 self.setUser( userService.getUser(authData.uid) );
