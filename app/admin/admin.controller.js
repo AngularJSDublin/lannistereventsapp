@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('eventsApp.AdminCtrl',[])
+        .module('eventsApp')
         .controller('AdminCtrl', AdminCtrl);
 
     AdminCtrl.$inject = ['$scope','eventsService', 'authService'];

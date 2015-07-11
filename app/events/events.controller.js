@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('eventsApp.EventsCtrl',[])
+        .module('eventsApp')
         .controller('EventsCtrl', EventsCtrl);
 
     EventsCtrl.$inject = ['$scope','eventsService', '$routeParams'];

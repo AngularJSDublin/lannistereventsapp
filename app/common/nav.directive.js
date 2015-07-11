@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-    .module('eventsApp.checkActiveNav',[])
+    .module('eventsApp')
     .directive('checkActiveNav', checkActiveNav);
 
 

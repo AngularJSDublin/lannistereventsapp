@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('eventsApp.LoginCtrl',[])
+        .module('eventsApp')
         .controller('LoginCtrl', LoginCtrl);
 
     LoginCtrl.$inject = ['$scope', '$routeParams', 'authService', '$rootScope'];

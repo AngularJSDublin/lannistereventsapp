@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('eventsApp.userService',[])
+        .module('eventsApp')
         .factory('userService', UserService);
 
     UserService.$inject = ['FIREBASE_URL', '$firebaseAuth', '$firebaseObject'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('eventsApp.config',[])
+        .module('eventsApp')
         .constant('FIREBASE_URL', 'https://lannistereventsdb.firebaseio.com/');
 
 })();

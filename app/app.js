@@ -1,20 +1,7 @@
 (function(){
     'use strict';
 
-    var app = angular.module('eventsApp', [
-        'ngRoute',
-        'firebase',
-        'angular-date-picker-polyfill',
-        'eventsApp.config',
-        'eventsApp.authService',
-        'eventsApp.userService',
-        'eventsApp.eventsService',
-        'eventsApp.AdminCtrl',
-        'eventsApp.EventsCtrl',
-        'eventsApp.LoginCtrl',
-        'eventsApp.RegisterCtrl',
-        'eventsApp.checkActiveNav',
-    ]);
+    var app = angular.module('eventsApp', ['ngRoute','firebase','angular-date-picker-polyfill']);
 
     app.config(function($routeProvider) {
 

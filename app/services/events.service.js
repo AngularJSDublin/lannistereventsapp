@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('eventsApp.eventsService',[])
+        .module('eventsApp')
         .service('eventsService', eventsService);
 
     eventsService.$inject = ['$firebaseArray','FIREBASE_URL'];
