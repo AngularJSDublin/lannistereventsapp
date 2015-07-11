@@ -1,48 +1,61 @@
 (function () {
     'use strict';
 
-    angular.module('eventsApp')
-    .factory('userService',UserService);
+    angular
+        .module('eventsApp')
+        .factory('userService', UserService);
 
-    function UserService(database, $firebaseAuth, $q) {
+    UserService.$inject = ['database', '$firebaseAuth', '$firebaseObject'];
 
-        var auth = $firebaseAuth(new Firebase(database.url));
+    function UserService(database, $firebaseAuth, $firebaseObject) {
+        var firebase = new Firebase(database.url);
+        var auth = $firebaseAuth(firebase);
+        var usersRef = firebase.child('users');
 
-        // console.log(database.users());
+        // saves user data
+        function _saveUserData(userData, newUser){
+            // console.log(userData, newUser);
+            // get the object we want to modify (or create if it doesn't exist)
+            var userRef = $firebaseObject(usersRef.child(userData.uid));
+            // assign the data to save
+            userRef.name = newUser.name;
+            userRef.role = newUser.role;
+            // save the data
+            return userRef.$save();
+        };
 
-        this.registerUser = function(newUser) {
+        // creates a user account
+        // returns a promise that will resolve
+        // to a firebase user object reference
+        this.createUser = function(newUser) {
+            // console.log(newUser);
+            var newUserData = {
+                name: newUser.name,
+                role: newUser.role,
+            };
 
-            var defer = $q.defer();
-
-            auth.$createUser({
+            return auth.$createUser({
                 email: newUser.email,
-                password: newUser.password
-            }).then(function(authData) {
-
-               var user = {};
-
-               user.name = newUser.name;
-               user.email = newUser.email;
-               user.uid = authData.uid;
-               user.role = 'user';
-
-                return database.users().$add(user);
+                password: newUser.password,
             }).then(function(userData) {
-                defer.resolve(userData);
-            }).catch(function(err) {
-                defer.reject(err);
+                console.log("User " + userData.uid + " created successfully!");
+                return _saveUserData(userData, newUser);
             });
-
-            // return the promise
-            return defer.promise;
         }
 
+        // get all users
         this.getUsers = function() {
-            return database.users();
+            console.log('getUsers()');
+            return $firebaseObject(usersRef);
         }
+
+        // get a specific user by uid
+        this.getUser = function(uid) {
+            console.log('getUser: ' + uid);
+            return $firebaseObject( usersRef.child(uid) );
+        };
 
         return this;
     }
-
 
 })();

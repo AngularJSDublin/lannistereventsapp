@@ -5,32 +5,31 @@
         .module('eventsApp')
         .factory('authService', authService);
 
-    authService.$inject = ['$rootScope', 'database', '$firebaseAuth'];
+    authService.$inject = ['$rootScope', 'database', '$firebaseAuth', 'userService'];
 
-    function authService($rootScope, database, $firebaseAuth) {
+    function authService($rootScope, database, $firebaseAuth, userService) {
 
         // create an instance of the authentication service
         var auth = $firebaseAuth(new Firebase(database.url));
 
+        // authenticated a user with email and password
+        // returns a
         this.login = function (credentials) {
             var self = this;
 
-            auth.$authWithPassword(
-                credentials
-            ).then(function (authData) {
-                var db = new Firebase('https://lannistereventsdb.firebaseio.com/' + 'user_details');
+            // login with password
+            var authPromise = auth.$authWithPassword( credentials );
 
-                db
-                .orderByChild('uid')
-                .startAt(authData.uid)
-                .endAt(authData.uid)
-                .once('value', function (user) {
-                    self.setUser(getFirstResult(user.val()));
-                });
+            //
+            authPromise.then(function (authData) {
+                // make the user available to the rest of the app
+                self.setUser( userService.getUser(authData.uid) );
             }).catch(function (error) {
                 console.error("Authentication failed:", error);
                 return false;
             });
+
+            return authPromise;
         };
 
         // retrieve the client's current authentication state
@@ -38,9 +37,9 @@
             var authData = auth.$getAuth();
 
             if (authData) {
-                console.log("Logged in as:", authData.uid);
+                console.log("getAuth: Logged in as:", authData.uid);
             } else {
-                console.log("Not logged in");
+                console.log("getAuth: Not logged in");
             }
             return authData;
         }
@@ -51,7 +50,7 @@
         };
 
         this.getRole = function () {
-            if( this.getAuth() ){
+            if( this.getAuth() && typeof $rootScope.user !== 'undefined' ){
                 return $rootScope.user.role;
             }else {
                 return null;
@@ -59,6 +58,7 @@
         };
 
         this.setUser = function (user) {
+            // console.log('setUser:' + user);
             $rootScope.user = user;
         };
 
@@ -66,19 +66,8 @@
             return $rootScope.user;
         };
 
-        this.registerUser = function (user) {
-            // create a dummy id and set role to user
-            // user.id = (userData.length + 1) + '';
-            // user.role = 'user';
-            //
-            // userData.push(user);
-            console.log('register user:',user);
-            // TODO: register user with firebase
-            // https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-users-and-authentication-createusercredentials
-        };
-
         this.logout = function () {
-            console.log('called authService.logout()');
+            console.log('authService.logout()');
             auth.$unauth();
             $rootScope.user = null;
         };
@@ -87,15 +76,6 @@
 
         return this;
 
-    }
-
-    // return the first property of the object
-    function getFirstResult(obj) {
-        for (var index in obj) {
-            if(obj.hasOwnProperty(index)) {
-                return obj[index];
-            }
-        }
     }
 
 })();

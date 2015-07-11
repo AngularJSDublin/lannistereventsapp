@@ -42,27 +42,30 @@
         });
     });
 
-    app.run(function(authService, $rootScope, $route, $location) {
+    app.run(function(authService, $rootScope, $route, $location, userService) {
 
-        // if the user is already authenticated
-        // set the user on the scope
+        // check if the user is already authenticated
         if(authService.getAuth()) {
-            // TODO: replace authService.getAuth() with something like UserService.getUser()
-            // because getAuth doesn't contain all user data.
-            authService.setUser( authService.getAuth() );
+            // get the users auth data
+            var authData = authService.getAuth();
+            // get the user profile data
+            var userData = userService.getUser(authData.uid);
+            // make the user data available to our app
+            authService.setUser( userData );
+            // console.log($rootScope.user);
         }
 
         // setup a callback for when the authentication state changes
         authService.onAuth(function(authData) {
           if (authData) {
-            console.log("Logged in as:", authData.uid);
+            console.log("onAuth: Logged in as:", authData.uid);
             // TODO: Ideally on successful login we should redirect
             // the user back to where they were originally trying to get to
             var redirectTo = $location.search().redirectTo;
             // console.log('redirecting to: ' + redirectTo);
             $location.url( redirectTo );
           } else {
-            console.log("Logged out");
+            console.log("onAuth: Logged out");
             $location.path( "/" );
           }
         });
