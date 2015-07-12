@@ -1,0 +1,18 @@
+{
+  "name": "simpleAngularJSAppBoilerplate",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AngularJSDublin/simpleAngularJSBuildUpAppBoilerplate"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node-karma spec"
+  },
+  "devDependencies": {
+    "express": "~4.12.4",
+    "jasmine-node-karma": "~1.6.1"
+  },
+  "dependencies": {
+    "firebase": "^2.2.7"
+  }
+}

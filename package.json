@@ -5,8 +5,25 @@
     "type": "git",
     "url": "https://github.com/AngularJSDublin/simpleAngularJSBuildUpAppBoilerplate"
   },
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node-karma spec"
+  },
   "devDependencies": {
-    "express": "~4.12.4"
+    "express": "~4.12.4",
+    "jasmine-core": "~2.3.4",
+    "karma-jasmine": "~0.3.6",
+    "karma-chrome-launcher": "~0.2.0",
+    "karma": "~0.12.37",
+    "grunt": "~0.4.5",
+    "jasmine": "~2.3.1",
+    "jasmine-node-karma": "~1.6.1",
+    "karma-firefox-launcher": "~0.1.6",
+    "karma-cli": "~0.1.0",
+    "karma-jasmine-html-reporter": "~0.1.8",
+    "karma-mocha-reporter": "~1.0.2",
+    "karma-jasmine-matchers": "~2.0.0-beta1",
+    "karma-junit-reporter": "~0.3.0",
+    "angular-mocks": "~1.4.2"
   },
   "dependencies": {
     "firebase": "^2.2.7"
